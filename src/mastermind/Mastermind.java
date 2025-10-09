@@ -37,92 +37,92 @@ public class Mastermind {
 			String input4 = sc.next();
 
 			// controle
-			String controle1 = codeVak1;
-			String controle2 = codeVak2;
-			String controle3 = codeVak3;
-			String controle4 = codeVak4;
+			String controle1;
+			String controle2;
+			String controle3;
+			String controle4;
 
 			// game
 
-			boolean correct1 = input1.equalsIgnoreCase(controle1);
+			boolean correct1 = input1.equalsIgnoreCase(codeVak1);
 
 			if (correct1) {
-				System.out.println(wit);
+				controle1=wit;
 			} else {
-				if (input1.equalsIgnoreCase(controle2)) {
-					System.out.println(zwart);
+				if (input1.equalsIgnoreCase(codeVak2)) {
+					controle1=zwart;
 				} else {
-					if (input1.equalsIgnoreCase(controle3)) {
-						System.out.println(zwart);
+					if (input1.equalsIgnoreCase(codeVak3)) {
+						controle1=zwart;
 					} else {
-						if (input1.equalsIgnoreCase(controle4)) {
-							System.out.println(zwart);
+						if (input1.equalsIgnoreCase(codeVak4)) {
+							controle1=zwart;
 						} else {
-							System.out.println(leeg);
+							controle1=leeg;
 						}
 					}
 				}
-			}
+			} System.out.println(controle1);
 
-			boolean correct2 = input2.equalsIgnoreCase(controle2);
+			boolean correct2 = input2.equalsIgnoreCase(codeVak2);
 
 			if (correct2) {
-				System.out.println(wit);
+				controle2=wit;
 			} else {
-				if (input2.equalsIgnoreCase(controle1)) {
-					System.out.println(zwart);
+				if (input2.equalsIgnoreCase(codeVak1)) {
+					controle2=zwart;
 				} else {
-					if (input2.equalsIgnoreCase(controle3)) {
-						System.out.println(zwart);
+					if (input2.equalsIgnoreCase(codeVak3)) {
+						controle2=zwart;
 					} else {
-						if (input2.equalsIgnoreCase(controle4)) {
-							System.out.println(zwart);
+						if (input2.equalsIgnoreCase(codeVak4)) {
+							controle2=zwart;
 						} else {
-							System.out.println(leeg);
+							controle2=leeg;
 						}
 					}
 				}
-			}
+			} System.out.println(controle2);
 			
-			boolean correct3 = input3.equalsIgnoreCase(controle3);
+			boolean correct3 = input3.equalsIgnoreCase(codeVak3);
 
 			if (correct3) {
-				System.out.println(wit);
+				controle3=wit;
 			} else {
-				if (input3.equalsIgnoreCase(controle1)) {
-					System.out.println(zwart);
+				if (input3.equalsIgnoreCase(codeVak1)) {
+					controle3=zwart;
 				} else {
-					if (input3.equalsIgnoreCase(controle2)) {
-						System.out.println(zwart);
+					if (input3.equalsIgnoreCase(codeVak2)) {
+						controle3=zwart;
 					} else {
-						if (input3.equalsIgnoreCase(controle4)) {
-							System.out.println(zwart);
+						if (input3.equalsIgnoreCase(codeVak4)) {
+							controle3=zwart;
 						} else {
-							System.out.println(leeg);
+							controle3=leeg;
 						}
 					}
 				}
-			}
+			} System.out.println(controle3);
 			
-			boolean correct4 = input4.equalsIgnoreCase(controle4);
+			boolean correct4 = input4.equalsIgnoreCase(codeVak4);
 
 			if (correct4) {
-				System.out.println(wit);
+				controle4=wit;
 			} else {
-				if (input4.equalsIgnoreCase(controle1)) {
-					System.out.println(zwart);
+				if (input4.equalsIgnoreCase(codeVak1)) {
+					controle4=zwart;
 				} else {
-					if (input4.equalsIgnoreCase(controle2)) {
-						System.out.println(zwart);
+					if (input4.equalsIgnoreCase(codeVak2)) {
+						controle4=zwart;
 					} else {
-						if (input4.equalsIgnoreCase(controle3)) {
-							System.out.println(zwart);
+						if (input4.equalsIgnoreCase(codeVak3)) {
+							controle4=zwart;
 						} else {
-							System.out.println(leeg);
+							controle4=leeg;
 						}
 					}
 				}
-			}
+			} System.out.println(controle4);
 
 			if (correct1) {
 				if (correct2) {
