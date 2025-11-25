@@ -1,5 +1,6 @@
 package mastermind;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Mastermind {
@@ -12,122 +13,118 @@ public class Mastermind {
 
 		Scanner sc = new Scanner(System.in);
 		// Codebreker
-		String rood = "Rood";		
-		String oranje = "Oranje";
-		String blauw = "Blauw";
-		String groen = "Groen";
-		String paars = "Paars";
-		String geel = "Geel";
+		String[] codeKrakersKleuren = { "Rood", "Oranje", "Blauw", "Groen", "Paars", "Geel" };
+
 		// Codemaker
-		String wit = "Wit";
-		String zwart = "Zwart";
-		String leeg = "Leeg";
+		String[] codeMakersKleuren = { "Wit", "Zwart", "Leeg" };
 
 		// Code
-		String codeVak1 = geel;
-		String codeVak2 = groen;
-		String codeVak3 = blauw;
-		String codeVak4 = rood;
+		String[] codeVakken = { codeKrakersKleuren[2], codeKrakersKleuren[2], codeKrakersKleuren[1],
+				codeKrakersKleuren[2] };
+
 
 		// poging
 		for (int i = 0; i <= 10; i = i + 1) {
-			String input1 = sc.next();
-			String input2 = sc.next();
-			String input3 = sc.next();
-			String input4 = sc.next();
-
+			String[] inputs = new String[4];
+			
+			for (int l = 0; l < inputs.length; l = l + 1) {
+				inputs[l] = sc.next();
+			}
 			// controle
-			String controle1;
-			String controle2;
-			String controle3;
-			String controle4;
+
+			String[] controles = new String[4];
 
 			// game
+			boolean correct[] = new boolean[4];
 
-			boolean correct1 = input1.equalsIgnoreCase(codeVak1);
+			correct[0] = inputs[0].equalsIgnoreCase(codeVakken[0]);
 
-			if (correct1) {
-				controle1=wit;
+			if (correct[0]) {
+				controles[0] = codeMakersKleuren[0];
 			} else {
-				if (input1.equalsIgnoreCase(codeVak2)) {
-					controle1=zwart;
+				if (inputs[0].equalsIgnoreCase(codeVakken[1])) {
+					controles[0] = codeMakersKleuren[1];
 				} else {
-					if (input1.equalsIgnoreCase(codeVak3)) {
-						controle1=zwart;
+					if (inputs[0].equalsIgnoreCase(codeVakken[2])) {
+						controles[0] = codeMakersKleuren[1];
 					} else {
-						if (input1.equalsIgnoreCase(codeVak4)) {
-							controle1=zwart;
+						if (inputs[0].equalsIgnoreCase(codeVakken[3])) {
+							controles[0] = codeMakersKleuren[1];
 						} else {
-							controle1=leeg;
+							controles[0] = codeMakersKleuren[2];
 						}
 					}
 				}
-			} System.out.println(controle1);
+			}
+			System.out.println(controles[0]);
 
-			boolean correct2 = input2.equalsIgnoreCase(codeVak2);
+			correct[1] = inputs[1].equalsIgnoreCase(codeVakken[1]);
 
-			if (correct2) {
-				controle2=wit;
+			if (correct[1]) {
+				controles[1] = codeMakersKleuren[0];
 			} else {
-				if (input2.equalsIgnoreCase(codeVak1)) {
-					controle2=zwart;
+				if (inputs[1].equalsIgnoreCase(codeVakken[0])) {
+					controles[1] = codeMakersKleuren[1];
 				} else {
-					if (input2.equalsIgnoreCase(codeVak3)) {
-						controle2=zwart;
+					if (inputs[1].equalsIgnoreCase(codeVakken[2])) {
+						controles[1] = codeMakersKleuren[1];
 					} else {
-						if (input2.equalsIgnoreCase(codeVak4)) {
-							controle2=zwart;
+						if (inputs[1].equalsIgnoreCase(codeVakken[3])) {
+							controles[1] = codeMakersKleuren[1];
 						} else {
-							controle2=leeg;
+							controles[1] = codeMakersKleuren[2];
 						}
 					}
 				}
-			} System.out.println(controle2);
-			
-			boolean correct3 = input3.equalsIgnoreCase(codeVak3);
+			}
+			System.out.println(controles[1]);
 
-			if (correct3) {
-				controle3=wit;
+			correct[2] = inputs[2].equalsIgnoreCase(codeVakken[2]);
+
+			if (correct[2]) {
+				controles[2] = codeMakersKleuren[0];
 			} else {
-				if (input3.equalsIgnoreCase(codeVak1)) {
-					controle3=zwart;
+				if (inputs[2].equalsIgnoreCase(codeVakken[0])) {
+					controles[2] = codeMakersKleuren[1];
 				} else {
-					if (input3.equalsIgnoreCase(codeVak2)) {
-						controle3=zwart;
+					if (inputs[2].equalsIgnoreCase(codeVakken[1])) {
+						controles[2] = codeMakersKleuren[1];
 					} else {
-						if (input3.equalsIgnoreCase(codeVak4)) {
-							controle3=zwart;
+						if (inputs[2].equalsIgnoreCase(codeVakken[3])) {
+							controles[2] = codeMakersKleuren[1];
 						} else {
-							controle3=leeg;
+							controles[2] = codeMakersKleuren[2];
 						}
 					}
 				}
-			} System.out.println(controle3);
-			
-			boolean correct4 = input4.equalsIgnoreCase(codeVak4);
+			}
+			System.out.println(controles[2]);
 
-			if (correct4) {
-				controle4=wit;
+			correct[3] = inputs[3].equalsIgnoreCase(codeVakken[3]);
+
+			if (correct[3]) {
+				controles[3] = codeMakersKleuren[0];
 			} else {
-				if (input4.equalsIgnoreCase(codeVak1)) {
-					controle4=zwart;
+				if (inputs[3].equalsIgnoreCase(codeVakken[0])) {
+					controles[3] = codeMakersKleuren[1];
 				} else {
-					if (input4.equalsIgnoreCase(codeVak2)) {
-						controle4=zwart;
+					if (inputs[3].equalsIgnoreCase(codeVakken[1])) {
+						controles[3] = codeMakersKleuren[1];
 					} else {
-						if (input4.equalsIgnoreCase(codeVak3)) {
-							controle4=zwart;
+						if (inputs[3].equalsIgnoreCase(codeVakken[2])) {
+							controles[3] = codeMakersKleuren[1];
 						} else {
-							controle4=leeg;
+							controles[3] = codeMakersKleuren[2];
 						}
 					}
 				}
-			} System.out.println(controle4);
+			}
+			System.out.println(controles[3]);
 
-			if (correct1) {
-				if (correct2) {
-					if (correct3) {
-						if (correct4) {
+			if (correct[0]) {
+				if (correct[1]) {
+					if (correct[2]) {
+						if (correct[3]) {
 							i = 11;
 							System.out.println("Gefeliciteert!! U heeft gewonnen!");
 						}
