@@ -5,31 +5,36 @@ import java.util.*;
 public class Mastermind {
 
 	public static void main(String[] args) {
-		System.out.println("Welkom bij mastermind! \nJe moet de code raden met de volgende kleuren: \nRood, Oranje, Blauw, Groen, Paars of Geel. \nBegin hier:");
+		System.out.println("Welkom bij mastermind!" + " \nJe moet de code raden met de volgende kleuren:"
+				+ " \nRood, Oranje, Blauw, Groen, Paars of Geel." + " \nBegin hier:"); // Introductie van de
+																						// spel/spelregels
 
-
-		Scanner sc = new Scanner(System.in); //De User input geven
-		Random rd = new Random(); //Een random generator in het progamma maken
+		Scanner sc = new Scanner(System.in); // De User input geven
+		Random rd = new Random(); // Een random generator in het progamma maken
 		// Codebreker
-		String[] codeKrakersKleuren = { "Rood", "Oranje", "Blauw", "Groen", "Paars", "Geel" }; //De kleuren voor de Code en Codekraker geven
+		String[] codeKrakersKleuren = { "Rood", "Oranje", "Blauw", "Groen", "Paars", "Geel" }; // De kleuren voor de
+																								// Code en Codekraker
+																								// geven
 
 		// Codemaker
-		String[] codeMakersKleuren = { "Wit", "Zwart", "Leeg" }; //De kleuren voor de Codemaker geven
+		String[] codeMakersKleuren = { "Wit", "Zwart", "Leeg" }; // De kleuren voor de Codemaker geven
 
 		// Code
-		String[] codeVakken = new String[4]; //4 plekken geopent voor de codeVakken
+		String[] codeVakken = new String[4]; // 4 plekken geopent voor de codeVakken
 
-		for (int o = 0; o < 4; o++) { //4 verschillende kleuren kiezen voor de code
-			int random = rd.nextInt(6); //Random number generator voor de kleuren
-			codeVakken[o] = codeKrakersKleuren[random]; //geeft nummer in de codeKrakersKleuren array in en herhaalt 4 keer
+		for (int o = 0; o < 4; o++) { // 4 verschillende kleuren kiezen voor de code
+			int random = rd.nextInt(6); // Random number generator voor de kleuren
+			codeVakken[o] = codeKrakersKleuren[random]; // geeft nummer in de codeKrakersKleuren array in en herhaalt 4
+														// keer
 		}
 
 		// poging
-		for (int i = 0; i <= 10; i = i + 1) {
-			String[] inputs = new String[4];
+		for (int i = 0; i <= 10; i = i + 1) { // herhaalt het spel 10 keer
+			String[] inputs = new String[4]; // Maakt 4 plekken open voor ieder poging
 
-			for (int l = 0; l < inputs.length; l = l + 1) {
-				inputs[l] = sc.next();
+			for (int l = 0; l < inputs.length; l = l + 1) { // herhaalt voor ieder poging 4 kleuren die ingevuld mag
+															// worden
+				inputs[l] = sc.next(); // geeft de User inputs om kleuren in te vullen
 			}
 			// controle
 
