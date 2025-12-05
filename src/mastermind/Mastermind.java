@@ -5,12 +5,12 @@ import java.util.*;
 public class Mastermind {
 
 	public static void main(String[] args) {
+		//Prints out the Introduction into the console.
 		System.out.print("Welcome to Mastermind!" + " \nTry and guess the color code with the following colors:"
 				+ " \nRed, Orange, Blue, Green, Purple or Yellow." + " \nEnter here:");
-		
-		String[] codeGuesserColors = { "Red", "Orange", "Blue", "Green", "Purple", "Yellow" };
 
-		// Codemaker
+		//Kleuren voor Mastermind
+		String[] codeGuesserColors = { "Red", "Orange", "Blue", "Green", "Purple", "Yellow" };
 		String[] codeMakerColors = { "White", "Black", "Empty" };
 
 		// Win or lose
@@ -18,21 +18,21 @@ public class Mastermind {
 
 		// Code
 		String[] codeSlots = new String[4];
-		for (int o = 0; o < 4; o++) {
+		for (int r = 0; r < 4; r++) {
 			Random rd = new Random();
 			int random = rd.nextInt(6);
-			codeSlots[o] = codeGuesserColors[random];
+			codeSlots[r] = codeGuesserColors[random];
 		}
 
 		// Attempt
 		Scanner sc = new Scanner(System.in);
 		for (int i = 0; i < 10; i = i + 1) {
 			String[] inputs = new String[4];
-			for (int l = 0; l < inputs.length; l = l + 1) {
+			for (int l = 0; l < inputs.length; l++) {
 				inputs[l] = sc.next();
 			}
+			
 			// Result
-
 			String[] results = new String[4];
 
 			// Game
@@ -95,8 +95,8 @@ public class Mastermind {
 		}
 		if (hasWon == false) {
 			System.out.print("You have lost! Better luck next time!" + " \nThe code was: ");
-			for (String codeVak : codeSlots) {
-				System.out.print(codeVak + " ");
+			for (String codeSlot : codeSlots) {
+				System.out.print(codeSlot + " ");
 			}
 		}
 		sc.close();
