@@ -36,9 +36,9 @@ public class Helper {
 	}
 
 	public String[] generateCode() {
-		Random rd = new Random();
+		Random rand = new Random();
 		for (int r = 0; r < 4; r++) {
-			codeSlots[r] = codeGuesserColors[rd.nextInt(6)];
+			codeSlots[r] = codeGuesserColors[rand.nextInt(6)];
 			System.out.println(codeSlots[r]);
 		}
 		return codeSlots;
