@@ -62,18 +62,4 @@ public class Helper {
 			System.out.println(results[i]);
 		}
 	}
-
-	public boolean slotChecker() {
-
-		hasWon = slotMatches[0] && slotMatches[1] && slotMatches[2] && slotMatches[3];
-
-		if (hasWon) {
-			System.out.println("Congratulations!! You have won!");
-		}
-		if (hasWon == false) {
-			System.out.print("You have lost! Better luck next time!" + " \nThe code was: ");
-		}
-		return hasWon;
-
-	}
 }
