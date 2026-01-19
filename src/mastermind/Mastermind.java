@@ -5,14 +5,17 @@ public class Mastermind {
 	public static void main(String[] args) {
 		// Prints out the Introduction into the console.
 		System.out.print("Welcome to Mastermind!" + " \nTry and guess the color code with the following colors:"
-				+ " \nRed, Orange, Blue, Green, Purple or Yellow." + " \nEnter here:");
+				+ " \nRed, Orange, Blue, Green, Purple or Yellow."
+				+ "\nWhite means the color is correct and in the right place."
+				+ "\nBlack means the color is correct but in the incorrect place."
+				+ "\nEmpty means the color is incorrect." + " \nEnter here:");
 
 		Helper help = new Helper();
 
 		// Attempt
 
 		boolean hasWon = false;
-		
+
 		help.generateCode();
 
 		for (int i = 0; i < 10; i++) {
