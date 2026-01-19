@@ -15,9 +15,9 @@ public class Helper {
 	Scanner sc = new Scanner(System.in);
 
 	public void getUserInput() {
-		for (int l = 0; l < inputs.length;) {
+		 for (int l = 0; l < inputs.length;) {
 			inputs[l] = sc.next();
-			boolean inputchecker = inputCheck(inputs[l], codeGuesserColors);
+			boolean inputchecker = checkInput(inputs[l], codeGuesserColors);
 			if (inputchecker == true) {
 				l++;
 			} else {
@@ -26,7 +26,7 @@ public class Helper {
 		}
 	}
 
-	public boolean inputCheck(String input, String[] collection) {
+	public boolean checkInput(String input, String[] collection) {
 
 		for (String color : collection) {
 			if (input.equalsIgnoreCase(color))
@@ -46,10 +46,10 @@ public class Helper {
 
 	// Game
 
-	public void codeSolver() {
+	public void solveCode() {
 
 		for (int i = 0; i < codeSlots.length; i++) {
-			boolean solver = inputCheck(inputs[i], codeSlots);
+			boolean solver = checkInput(inputs[i], codeSlots);
 			slotMatches[i] = inputs[i].equalsIgnoreCase(codeSlots[i]);
 
 			if (slotMatches[i]) {

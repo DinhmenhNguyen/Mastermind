@@ -7,8 +7,6 @@ public class Mastermind {
 		System.out.print("Welcome to Mastermind!" + " \nTry and guess the color code with the following colors:"
 				+ " \nRed, Orange, Blue, Green, Purple or Yellow." + " \nEnter here:");
 
-		// Win or lose
-
 		Helper help = new Helper();
 
 		// Attempt
@@ -20,7 +18,7 @@ public class Mastermind {
 		for (int i = 0; i < 10; i++) {
 			help.getUserInput();
 
-			help.codeSolver();
+			help.solveCode();
 
 			hasWon = help.slotMatches[0] && help.slotMatches[1] && help.slotMatches[2] && help.slotMatches[3];
 
