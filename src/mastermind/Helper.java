@@ -39,7 +39,10 @@ public class Helper {
 		Random rand = new Random();
 		for (int r = 0; r < 4; r++) {
 			codeSlots[r] = codeGuesserColors[rand.nextInt(codeGuesserColors.length)];
-			System.out.println(codeSlots[r]);
+			boolean revealCode = false;
+			if(revealCode == true) {
+				System.out.println(codeSlots[r]);
+			}
 		}
 		return codeSlots;
 	}
