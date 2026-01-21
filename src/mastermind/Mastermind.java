@@ -20,7 +20,6 @@ public class Mastermind {
 
 		for (int i = 0; i < 10; i++) {
 			help.getUserInput();
-
 			help.solveCode();
 
 			hasWon = help.slotMatches[0] && help.slotMatches[1] && help.slotMatches[2] && help.slotMatches[3];
