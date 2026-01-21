@@ -36,10 +36,10 @@ public class Helper {
 	}
 
 	public String[] generateCode() {
-		Random rand = new Random();
+		Random random = new Random();
 		for (int r = 0; r < 4; r++) {
-			codeSlots[r] = codeGuesserColors[rand.nextInt(codeGuesserColors.length)];
-			boolean revealCode = true;
+			codeSlots[r] = codeGuesserColors[random.nextInt(codeGuesserColors.length)];
+			boolean revealCode = false;
 			if(revealCode == true) {
 				System.out.println(codeSlots[r]);
 			}
