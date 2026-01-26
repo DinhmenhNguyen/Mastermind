@@ -37,7 +37,7 @@ public class Helper {
 
 	public String[] generateCode() {
 		Random random = new Random();
-		for (int r = 0; r < 4; r++) {
+		for (int r = 0; r < codeSlots.length; r++) {
 			codeSlots[r] = codeGuesserColors[random.nextInt(codeGuesserColors.length)];
 			boolean revealCode = true;
 			if(revealCode == true) {
